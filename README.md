@@ -59,7 +59,7 @@ As pointed out in initial technical reviews, the current implementation is an ea
 
 Click the badge below to watch the real-time processing and routing pipeline execution:
 
-[![Watch the Demo on Google Drive](https://img.shields.io/badge/Google_Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/file/d/1FM0gOEbj3dx-D-8ptb1AVTUtCQDKOcfS/view?usp=drive_link)
+[![Watch the Demo on Google Drive](https://img.shields.io/badge/Google_Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/file/d/1T7p5HRrifkpRQ2Yre06IPFOscQg2LBm3/view?usp=sharing)
 
 💡 **Demo Walkthrough Note:** *This screen recording demonstrates the local processing pipeline in real-time. In the first run, a normal vocal baseline is established at 157.38 Hz. In the second run, the vocal frequency drops to 136.26 Hz (simulating a flat, monotone delivery), automatically triggering the system logic gate and shifting Gemma's response matrix entirely on-device.*
 
