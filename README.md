@@ -55,3 +55,18 @@ As pointed out in initial technical reviews, the current implementation is an ea
 ### Next-Step Roadmap:
 1. **Implement Robust Fundamental Frequency Estimation:** Transition from standard FFT peak selection to an established fundamental frequency estimation algorithm (like the YIN or pYIN algorithms) for accurate human vocal cord tracking.
 2. **Dynamic Noise Floors:** Implement a rolling baseline calibration function to automatically adapt to ambient room noise and individual microphone sensitivities.
+## 🎥 Live Project Demo
+
+Click the badge below to watch the real-time processing and routing pipeline execution:
+
+[![Watch the Demo on Google Drive](https://img.shields.io/badge/Google_Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/file/d/1FM0gOEbj3dx-D-8ptb1AVTUtCQDKOcfS/view?usp=drive_link)
+
+💡 **Demo Walkthrough Note:** *This screen recording demonstrates the local processing pipeline in real-time. In the first run, a normal vocal baseline is established at 157.38 Hz. In the second run, the vocal frequency drops to 136.26 Hz (simulating a flat, monotone delivery), automatically triggering the system logic gate and shifting Gemma's response matrix entirely on-device.*
+
+### 🟢 Run 1: Genuine Vocal Baseline
+* **Telemetry Data:** Pitch: `157.38 Hz` | Energy: `0.001 RMS`
+* **Gemma 2 Response:** *"The sky must be particularly safe today, considering how uninspired the human condition appears to be."*
+
+### 🔴 Run 2: Sarcastic Monotone Override
+* **Telemetry Data:** Pitch: `136.26 Hz` | Energy: `0.024 RMS`
+* **Gemma 2 Response (Overridden):** *"Delivering views of a Sunday afternoon assumes to be radiating from your voice like a poorly-tuned radio signal."*
