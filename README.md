@@ -25,7 +25,7 @@ graph TD
     style B fill:#bbf,stroke:#333,stroke-width:2px
     style C fill:#fdd,stroke:#333,stroke-width:2px
     style D fill:#bfb,stroke:#333,stroke-width:2px
-
+```
 ---
 
 ## 🚀 Core Value Proposition: Why This Architecture Wins
