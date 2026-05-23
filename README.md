@@ -9,6 +9,23 @@ Unlike static systems that rely on fragile, hardcoded thresholds, this pipeline 
 
 By tracking dynamic percentages of change (Deltas), the framework effortlessly differentiates between a quiet, soft-spoken genuine voice, a normal communication style, and a projecting deadpan delivery—making it entirely user-agnostic.
 
+## 🗺️ System Data Flow Map
+
+```text
+[ Raw Audio Input ] ──> ( Hardware Buffer Stream )
+                               │
+                               ▼
+               [ Zero-Overhead DSP Feature Engine ]
+               ├── Autocorrelation ──> Pitch Delta (Hz)
+               └── RMS Calculation  ──> Volume Delta (Energy)
+                               │
+                               ▼
+               [ Multi-Modal Prompt Injection ] 
+               └── Fuses Acoustic Deltas + Transcribed Text
+                               │
+                               ▼
+                     [ Local Ollama Instance ]
+                     └── Gemma 2 (Acoustic Context Validated)
 ## 🛠️ Core System Architecture
 
 To keep the application highly performant on standard consumer laptops, the pipeline handles multimodal inputs locally through a lightweight digital signal processing (DSP) approach rather than forcing dense transformer token overhead:
