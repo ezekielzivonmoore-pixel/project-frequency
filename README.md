@@ -26,6 +26,7 @@ By tracking dynamic percentages of change (Deltas), the framework effortlessly d
                                ▼
                      [ Local Ollama Instance ]
                      └── Gemma 2 (Acoustic Context Validated)
+```
 ## 🛠️ Core System Architecture
 
 To keep the application highly performant on standard consumer laptops, the pipeline handles multimodal inputs locally through a lightweight digital signal processing (DSP) approach rather than forcing dense transformer token overhead:
