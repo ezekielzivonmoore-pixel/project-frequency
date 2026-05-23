@@ -8,7 +8,7 @@ By pulling raw audio data directly from the hardware buffer, this framework hand
 
 See **Project FREQUENCY** in action! Watch how the local DSP engine instantly logs vocal pitch and volume deltas to detect deadpan sarcasm vs. high-energy excitement:
 
-[![Watch Project FREQUENCY Demo](https://img.shields.io/badge/YouTube-Watch%20Video-red?style=for-the-badge&logo=youtube)](YOUR_YOUTUBE_VIDEO_URL_HERE)
+[![Watch Project FREQUENCY Demo](https://img.shields.io/badge/YouTube-Watch%20Video-red?style=for-the-badge&logo=youtube)](https://youtu.be/zTBs6Ctsr6Q)
 
 *(Click the badge above to watch the full system demonstration on YouTube!)*
 
