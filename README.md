@@ -29,6 +29,12 @@ Before initiating the pipeline, ensure the following local service dependencies 
 ## 📥 Installation & Build Sequence
 
 Clone this repository and navigate into the target workspace directory:
+### 🎮 Live Console Interaction
+
+Once the application is active and your baseline metrics are initialized, manage the runtime stream via the terminal prompt:
+
+* **`run`** — Instantly open a 5-second active recording window to capture acoustic dynamics and pass your voice stream to Gemma 2.
+* **`q`** — Safely terminate background processing threads and exit the application loop cleanly.
 
 ```bash
 git clone https://github.com/ezekielzivonmoore-pixel/project-frequency.git
