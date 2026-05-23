@@ -31,7 +31,7 @@ Before initiating the pipeline, ensure the following local service dependencies 
 Clone this repository and navigate into the target workspace directory:
 
 ```bash
-git clone [https://github.com/ezekielzivonmoore-pixel/project-frequency.git](https://github.com/ezekielzivonmoore-pixel/project-frequency.git)
+git clone https://github.com/ezekielzivonmoore-pixel/project-frequency.git
 cd project-frequency
 pip3 install numpy sounddevice soundfile SpeechRecognition requests --break-system-packages
 python3 frequency.py
