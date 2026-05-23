@@ -4,6 +4,16 @@ Project FREQUENCY is a local, privacy-first AI application designed to eliminate
 
 By pulling raw audio data directly from the hardware buffer, this framework handles feature extraction at the hardware level—saving massive context window tokens and battery life.
 
+## 📺 Live Demo
+
+See **Project FREQUENCY** in action! Watch how the local DSP engine instantly logs vocal pitch and volume deltas to detect deadpan sarcasm vs. high-energy excitement:
+
+[![Watch Project FREQUENCY Demo](https://img.shields.io/badge/YouTube-Watch%20Video-red?style=for-the-badge&logo=youtube)](YOUR_YOUTUBE_VIDEO_URL_HERE)
+
+*(Click the badge above to watch the full system demonstration on YouTube!)*
+
+---
+
 ## 🧠 How It Works: The Dual-Baseline System
 Unlike static systems that rely on fragile, hardcoded thresholds, this pipeline initializes a **3-second Dual-Baseline Calibration Phase** upon boot. It captures both the user's native fundamental pitch (Hz) and native volume energy (RMS). 
 
