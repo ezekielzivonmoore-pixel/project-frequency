@@ -11,21 +11,25 @@ By tracking dynamic percentages of change (Deltas), the framework effortlessly d
 
 ## 🗺️ System Data Flow Map
 
-```text
-[ Raw Audio Input ] ──> ( Hardware Buffer Stream )
-                               │
-                               ▼
-               [ Zero-Overhead DSP Feature Engine ]
-               ├── Autocorrelation ──> Pitch Delta (Hz)
-               └── RMS Calculation  ──> Volume Delta (Energy)
-                               │
-                               ▼
-               [ Multi-Modal Prompt Injection ] 
-               └── Fuses Acoustic Deltas + Transcribed Text
-                               │
-                               ▼
-                     [ Local Ollama Instance ]
-                     └── Gemma 2 (Acoustic Context Validated)
+```mermaid
+graph LR
+    %% Styles and Color Theme
+    classDef input fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e3a8a;
+    classDef dsp fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#14532d;
+    classDef context fill:#ffedd5,stroke:#ea580c,stroke-width:2px,color:#7c2d12;
+    classDef llm fill:#f3e8ff,stroke:#9333ea,stroke-width:2px,color:#581c87;
+
+    %% Workflow Nodes
+    A[🎤 Raw Audio Input]:::input --> B(Hardware Buffer Stream):::input
+    B --> C{DSP Feature Engine}:::dsp
+    
+    C -->|Autocorrelation| D(Pitch Delta Hz):::dsp
+    C -->|RMS Calculation| E(Volume Delta Energy):::dsp
+    
+    D --> F[Prompt Injection Layer]:::context
+    E --> F
+    
+    F -->|Fused Context Array| G[🧠 Ollama: Gemma 2]:::llm
 ```
 ## 🛠️ Core System Architecture
 
