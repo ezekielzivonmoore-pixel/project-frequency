@@ -93,3 +93,26 @@ The dashboard processes raw acoustic voltage arrays over discrete blocks ($N = 1
    $$x_{\text{rms}} = \sqrt{\frac{1}{N} \sum_{i=1}^{N} x_i^2}$$
 
 2. **Statistical Z-Score Scaling:** Maps raw acoustic fluctuations dynamically to a normalized standard deviation boundary ($\pm 4\sigma$) to negate device-specific microphone hardware sensitivity biases.
+
+### 🎛️ Pipeline Control Flow & Signal Routing
+
+```mermaid
+graph TD
+    A[🎤 Raw Audio Input] --> B[💾 Hardware Buffer Stream]
+    B --> C{DSP Feature Engine}
+    
+    C -->|Autocorrelation| D[Pitch Delta Hz]
+    C -->|RMS Calculation| E[Volume Delta Energy]
+    
+    D --> F[Prompt Injection Layer]
+    E --> F
+    
+    F -->|Fused Context Array| G[🧠 Ollama: Gemma2]
+    
+    style A fill:#e1f5fe,stroke:#0288d1,stroke-width:2px
+    style B fill:#e8eaf6,stroke:#3f51b5,stroke-width:2px
+    style C fill:#e8f5e9,stroke:#4caf50,stroke-width:2px
+    style D fill:#e8f5e9,stroke:#4caf50,stroke-width:2px
+    style E fill:#e8f5e9,stroke:#4caf50,stroke-width:2px
+    style F fill:#fff3e0,stroke:#ff9800,stroke-width:2px
+    style G fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px
