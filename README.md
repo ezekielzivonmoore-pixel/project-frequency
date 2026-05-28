@@ -81,6 +81,15 @@ Once the application is active and your baseline metrics are initialized, manage
 
 To scale the low-overhead processing kernel into an interactive dashboard, v2.0 introduces a decoupled multi-threaded presentation layer. This architecture ensures that high-frequency physical hardware ingestion routines never suffer from front-end interface lag or resource locks.
 
+### 📊 Telemetry Video Demonstration
+
+The attached demonstration video highlights the v2.0 dashboard running in **Deterministic Synthetic Fallback Mode**. This robust software routing matrix ensures continuous UI stability and interface testing even when local OS-level permission blocks or containerized cloud environments restrict direct physical microphone access.
+
+During the playback, the pipeline actively processes and visualizes data using advanced statistical mechanics:
+* **Online Z-Score Normalization ($\sigma$):** Signals are dynamically scaled and translated into real-time standard deviations rather than raw, device-biased amplitude voltage blocks.
+* **95% Confidence Interval Envelopes ($\pm1.96\sigma$):** The visualization plots dynamic upper and lower control limits. This creates a moving "statistical hallway" that demonstrates how the backend isolates true signal anomalies and dampens unhandled noise thresholds. 
+🎥 **[Click Here to Watch the Project Frequency v2.0 Telemetry Demo Video on YouTube](https://youtu.be/-FTsfakiVnU)**
+
 ### Concurrency & Hardware Abstraction Layer (HAL) Resilience
 - **Isolated Thread Execution:** Audio buffer ingestion runs inside an out-of-band asynchronous background daemon thread, entirely decoupling hardware I/O blocks from the browser frame rendering pipeline.
 - **Dynamic Device Enumeration:** An integrated hardware scanner automatically inspects host audio indexes at runtime, filtering out silent software loopbacks (e.g., OBS, virtual virtual routing layers) to lock directly onto the physical microphone diaphragm.
