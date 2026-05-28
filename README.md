@@ -73,3 +73,23 @@ Once the application is active and your baseline metrics are initialized, manage
 
 * **`run`** — Instantly open a 5-second active recording window to capture acoustic dynamics and pass your voice stream to Gemma 2.
 * **`q`** — Safely terminate background processing threads and exit the application loop cleanly.
+
+
+---
+
+## 🏗️ v2.0 Production Upgrade: Multi-Threaded Telemetry Panel (`app.py`)
+
+To scale the low-overhead processing kernel into an interactive dashboard, v2.0 introduces a decoupled multi-threaded presentation layer. This architecture ensures that high-frequency physical hardware ingestion routines never suffer from front-end interface lag or resource locks.
+
+### Concurrency & Hardware Abstraction Layer (HAL) Resilience
+- **Isolated Thread Execution:** Audio buffer ingestion runs inside an out-of-band asynchronous background daemon thread, entirely decoupling hardware I/O blocks from the browser frame rendering pipeline.
+- **Dynamic Device Enumeration:** An integrated hardware scanner automatically inspects host audio indexes at runtime, filtering out silent software loopbacks (e.g., OBS, virtual virtual routing layers) to lock directly onto the physical microphone diaphragm.
+- **Deterministic Synthetic Fallback:** Features a mathematical vector simulation toggle utilizing NumPy arrays to stream scale-invariant vocal telemetry trajectories, ensuring continuous integration stability in cloud-container environments where a physical microphone is unmapped.
+
+### Statistical Signal Normalization
+The dashboard processes raw acoustic voltage arrays over discrete blocks ($N = 1024$) at a sample rate of $16\text{ kHz}$ to expose scale-invariant metrics ideal for downstream machine learning token injections:
+
+1. **Root-Mean-Square (RMS) Amplitude Power Envelopes:**
+   $$x_{\text{rms}} = \sqrt{\frac{1}{N} \sum_{i=1}^{N} x_i^2}$$
+
+2. **Statistical Z-Score Scaling:** Maps raw acoustic fluctuations dynamically to a normalized standard deviation boundary ($\pm 4\sigma$) to negate device-specific microphone hardware sensitivity biases.
