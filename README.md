@@ -103,4 +103,8 @@ The dashboard processes raw acoustic voltage arrays over discrete blocks ($N = 1
 
 2. **Statistical Z-Score Scaling:** Maps raw acoustic fluctuations dynamically to a normalized standard deviation boundary ($\pm 4\sigma$) to negate device-specific microphone hardware sensitivity biases.
 
-### 🎛️ Pipeline Control Flow & Signal Routing
+The `app.py` presentation engine maintains an asynchronous, fault-tolerant data routing pipeline to map raw inputs into live telemetry layouts without interface lag:
+
+* **State Ingestion Layer:** The system actively samples the user-configured telemetry source toggle. If hardware initialization throws an exception due to host security constraints or missing permissions, the backend cleanly routes execution to the backup simulation vector.
+* **FIFO Memory Management:** Calculated telemetry standard deviations are stored inside a First-In, First-Out (FIFO) buffer ring bounded to a 30-element frame length. This restricts the data payload to a static sliding timeline window and prevents front-end memory leakage.
+* **Downstream Graph Injection:** The presentation engine flushes the normalized vector data directly into active chart components at a steady frame interval ($t = 0.08s$), delivering smooth data visualizations while preserving UI interactivity threads.
